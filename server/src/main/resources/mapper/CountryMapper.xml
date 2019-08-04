@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.server.mapper.CountryMapper">
+  <resultMap id="BaseResultMap" type="com.demo.server.entity.Country">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="country_name" jdbcType="VARCHAR" property="countryName" />
+    <result column="country_code" jdbcType="VARCHAR" property="countryCode" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="version" jdbcType="TIMESTAMP" property="version" />
+  </resultMap>
+</mapper>
