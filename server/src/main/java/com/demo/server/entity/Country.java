@@ -1,5 +1,6 @@
 package com.demo.server.entity;
 
+import com.demo.server.model.CountryCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -41,7 +42,7 @@ public class Country {
     /**
      * 代码
      */
-    private String countryCode;
+    private CountryCodeEnum countryCode;
     private Date creatTime;
     private Date updateTime;
     private Date version;

@@ -22,18 +22,23 @@
             <property name="beginningDelimiter" value="`"/>
             <property name="endingDelimiter" value="`"/>
         </plugin>
+<!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver"-->
+<!--                                connectionURL="jdbc:mysql://machine:3306/mybatis?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"-->
+<!--                                userId="root"-->
+<!--                                password="123456">-->
+<!--        </jdbcConnection>-->
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://machine:3306/mybatis?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
-                        userId="root"
-                        password="123456">
+                        connectionURL="jdbc:mysql://119.23.185.80:3306/db_css?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
+                        userId="sa_w"
+                        password="sa_w@2018#123">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="com.demo.server.entity" targetProject="src/main/java"/>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
-        <javaClientGenerator targetPackage="com.demo.server.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+        <javaClientGenerator targetPackage="com.demo.server.mapper.second" targetProject="src/main/java" type="XMLMAPPER"/>
 
 <!--        <table tableName="country" enableCountByExample="true" enableDeleteByExample="true"-->
 <!--               enableSelectByExample="true" enableUpdateByExample="true">-->
@@ -43,12 +48,8 @@
 <!--            &lt;!&ndash;<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;-->
 <!--        </table>-->
 
-        <table tableName="country" enableCountByExample="false" enableDeleteByExample="false"
+        <table tableName="t_user" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false">
-            <!--mysql 配置-->
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
-            <!--oracle 配置-->
-            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
         </table>
     </context>
 </generatorConfiguration>

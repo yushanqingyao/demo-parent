@@ -9,9 +9,9 @@
                 handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
                 javaType="com.demo.server.model.StateEnum"/>
         <!--值为为字符串类型,取枚举序name-->
-        <!--        <typeHandler-->
-        <!--                handler="org.apache.ibatis.type.EnumTypeHandler"-->
-        <!--                javaType="com.demo.server.model.StateEnum"/>-->
+                <typeHandler
+                        handler="org.apache.ibatis.type.EnumTypeHandler"
+                        javaType="com.demo.server.model.CountryCodeEnum"/>
 
         <typeHandler handler="com.demo.server.lib.mybatis.Obj2StrTypeHandler"
                      javaType="com.demo.server.model.Address"/>

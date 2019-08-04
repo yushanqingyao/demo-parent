@@ -1,4 +1,4 @@
-package com.demo.server.mapper;
+package com.demo.server.mapper.primary;
 
 import com.demo.server.entity.Country;
 import tk.mybatis.mapper.common.Mapper;
