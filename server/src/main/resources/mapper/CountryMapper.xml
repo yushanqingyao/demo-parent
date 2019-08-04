@@ -12,4 +12,10 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="version" jdbcType="TIMESTAMP" property="version" />
   </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, country_name, country_code, creat_time, update_time, version
+  </sql>
 </mapper>

@@ -15,9 +15,7 @@ eureka:
   server:
     #### 清理间隔（单位毫秒，默认是60*1000），开发环境设置如下可快速移除不可用的服务
     eviction-interval-timer-in-ms: 5000
-mapper:
-  #  是否判断字符串类型 !=''
-  not-empty: true
+
 spring:
   application:
     name: server
@@ -72,6 +70,22 @@ logging:
     com:
       demo:
         server: debug
+
+mapper:
+  #  insertSelective 和 updateByPrimaryKeySelective 中，是否判断字符串类型 !=''
+  not-empty: true
+  style: camelhumpAndLowercase
+  #  控制是否支持（getter 和 setter）在方法上使用注解
+  enable-method-annotation: true
+  #  <selectKey>中的order属性，可选值为BEFORE和AFTER
+  before: false
+  #  判断实体类属性是否为表字段时校验字段是否为简单类型(不包括8种基本类型)，如果不是就忽略该属性(默认的简单类型在 SimpleTypeUtil)
+  use-simple-type: true
+  enum-as-simple-type: true
+  #  只允许待条件的删除操作
+  safe-delete: true
+  #  只允许待条件的更新操作
+  safe-update: true
 mybatis:
   config-location: classpath:mybatis/configuration.xml
   mapper-locations:

@@ -5,19 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import tk.mybatis.mapper.annotation.KeySql;
-import tk.mybatis.mapper.annotation.NameStyle;
-import tk.mybatis.mapper.code.IdentityDialect;
-import tk.mybatis.mapper.code.ORDER;
-import tk.mybatis.mapper.code.Style;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@NameStyle(Style.camelhumpAndLowercase)
-@Table(name = "country")
+@Table(name = "`country`")
 public class Country {
     /**
      * 主键
@@ -45,14 +42,8 @@ public class Country {
      * 代码
      */
     private String countryCode;
-
     private Date creatTime;
-
     private Date updateTime;
-
     private Date version;
-
-
-
 
 }
