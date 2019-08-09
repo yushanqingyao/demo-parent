@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="server.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="server.entity.Order">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <id column="amazon_order_id" jdbcType="VARCHAR" property="amazonOrderId" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="refund_status" jdbcType="BIT" property="refundStatus" />
+    <result column="pull_data_time" jdbcType="INTEGER" property="pullDataTime" />
+    <result column="update_data_time" jdbcType="INTEGER" property="updateDataTime" />
+    <result column="marketplace_id" jdbcType="VARCHAR" property="marketplaceId" />
+    <result column="store_code" jdbcType="VARCHAR" property="storeCode" />
+    <result column="seller_order_id" jdbcType="VARCHAR" property="sellerOrderId" />
+    <result column="purchase_date" jdbcType="INTEGER" property="purchaseDate" />
+    <result column="purchase_date_str" jdbcType="VARCHAR" property="purchaseDateStr" />
+    <result column="last_update_date" jdbcType="INTEGER" property="lastUpdateDate" />
+    <result column="order_status" jdbcType="VARCHAR" property="orderStatus" />
+    <result column="fulfillment_channel" jdbcType="VARCHAR" property="fulfillmentChannel" />
+    <result column="sales_channel" jdbcType="VARCHAR" property="salesChannel" />
+    <result column="order_channel" jdbcType="VARCHAR" property="orderChannel" />
+    <result column="ship_service_level" jdbcType="VARCHAR" property="shipServiceLevel" />
+    <result column="cc" jdbcType="VARCHAR" property="cc" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="to_dollar" jdbcType="INTEGER" property="toDollar" />
+    <result column="number_of_items_shipped" jdbcType="INTEGER" property="numberOfItemsShipped" />
+    <result column="number_of_items_unshipped" jdbcType="INTEGER" property="numberOfItemsUnshipped" />
+    <result column="payment_method" jdbcType="VARCHAR" property="paymentMethod" />
+    <result column="buyer_email" jdbcType="VARCHAR" property="buyerEmail" />
+    <result column="buyer_name" jdbcType="VARCHAR" property="buyerName" />
+    <result column="shipment_service_level_category" jdbcType="VARCHAR" property="shipmentServiceLevelCategory" />
+    <result column="shipped_by_amazon_tfm" jdbcType="BIT" property="shippedByAmazonTfm" />
+    <result column="tfm_shipment_status" jdbcType="VARCHAR" property="tfmShipmentStatus" />
+    <result column="cba_displayable_shipping_label" jdbcType="VARCHAR" property="cbaDisplayableShippingLabel" />
+    <result column="order_type" jdbcType="VARCHAR" property="orderType" />
+    <result column="earliest_ship_date" jdbcType="INTEGER" property="earliestShipDate" />
+    <result column="earliest_ship_date_str" jdbcType="VARCHAR" property="earliestShipDateStr" />
+    <result column="latest_ship_date" jdbcType="INTEGER" property="latestShipDate" />
+    <result column="latest_ship_date_str" jdbcType="VARCHAR" property="latestShipDateStr" />
+    <result column="earliest_delivery_date" jdbcType="INTEGER" property="earliestDeliveryDate" />
+    <result column="earliest_delivery_date_str" jdbcType="VARCHAR" property="earliestDeliveryDateStr" />
+    <result column="latest_delivery_date" jdbcType="INTEGER" property="latestDeliveryDate" />
+    <result column="latest_delivery_date_str" jdbcType="VARCHAR" property="latestDeliveryDateStr" />
+    <result column="shipping_name" jdbcType="VARCHAR" property="shippingName" />
+    <result column="shipping_phone" jdbcType="VARCHAR" property="shippingPhone" />
+    <result column="purchase_order_number" jdbcType="VARCHAR" property="purchaseOrderNumber" />
+    <result column="is_business_order" jdbcType="BIT" property="isBusinessOrder" />
+    <result column="is_premium_order" jdbcType="BIT" property="isPremiumOrder" />
+    <result column="is_prime" jdbcType="BIT" property="isPrime" />
+    <result column="labels" jdbcType="VARCHAR" property="labels" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="server.entity.Order">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ext" jdbcType="LONGVARCHAR" property="ext" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    seller_id, amazon_order_id, uid, refund_status, pull_data_time, update_data_time, 
+    marketplace_id, store_code, seller_order_id, purchase_date, purchase_date_str, last_update_date, 
+    order_status, fulfillment_channel, sales_channel, order_channel, ship_service_level, 
+    cc, amount, to_dollar, number_of_items_shipped, number_of_items_unshipped, payment_method, 
+    buyer_email, buyer_name, shipment_service_level_category, shipped_by_amazon_tfm, 
+    tfm_shipment_status, cba_displayable_shipping_label, order_type, earliest_ship_date, 
+    earliest_ship_date_str, latest_ship_date, latest_ship_date_str, earliest_delivery_date, 
+    earliest_delivery_date_str, latest_delivery_date, latest_delivery_date_str, shipping_name, 
+    shipping_phone, purchase_order_number, is_business_order, is_premium_order, is_prime, 
+    labels
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ext
+  </sql>
+</mapper>

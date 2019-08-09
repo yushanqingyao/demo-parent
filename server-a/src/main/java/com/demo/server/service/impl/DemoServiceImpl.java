@@ -1,7 +1,6 @@
 package com.demo.server.service.impl;
 
 import com.demo.server.entity.Country;
-import com.demo.server.entity.User;
 import com.demo.server.mapper.primary.CountryMapper;
 import com.demo.server.mapper.second.UserMapper;
 import com.demo.server.model.CountryCodeEnum;

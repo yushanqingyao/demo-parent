@@ -1,0 +1,41 @@
+server:
+  port: 9004
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    service-url:
+#      defaultZone: http://zk:8761/eureka/
+#  server:
+#    #### 清理间隔（单位毫秒，默认是60*1000），开发环境设置如下可快速移除不可用的服务
+#    eviction-interval-timer-in-ms: 5000
+spring:
+  application:
+    name: msg-server
+#  rabbitmq:
+#    host: machine
+#    port: 5672
+#    username: root
+#    password: 123456
+#
+##    发送手动确认
+#    publisher-confirms: true
+#    publisher-returns: true
+#    virtual-host: my_vhost
+##    消费手动确认
+#    listener:
+#      direct:
+#        acknowledge-mode: manual
+#      simple:
+#        acknowledge-mode: manual
+logging:
+  level:
+    root: warn
+    com:
+      demo:
+        sm: debug
+    org:
+      springframework:
+        amqp:
+          rabbit:
+            core: debug

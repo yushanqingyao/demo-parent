@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL MAP Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeHandlers>
+        <!--值为为数字类型,取枚举序列号-->
+        <typeHandler
+                handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+                javaType="server.model.StateEnum"/>
+        <!--值为为字符串类型,取枚举序name-->
+                <typeHandler
+                        handler="org.apache.ibatis.type.EnumTypeHandler"
+                        javaType="server.model.SentimentEnum"/>
+
+        <typeHandler handler="server.lib.mybatis.Obj2StrTypeHandler"
+                     javaType="server.model.Address"/>
+    </typeHandlers>
+</configuration>

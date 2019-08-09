@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="server.mapper.RefundmentMapper">
+  <resultMap id="BaseResultMap" type="server.entity.Refundment">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <id column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <id column="refund_id" jdbcType="VARCHAR" property="refundId" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="pull_data_time" jdbcType="INTEGER" property="pullDataTime" />
+    <result column="update_data_time" jdbcType="INTEGER" property="updateDataTime" />
+    <result column="marketplace_id" jdbcType="VARCHAR" property="marketplaceId" />
+    <result column="store_code" jdbcType="VARCHAR" property="storeCode" />
+    <result column="return_date" jdbcType="INTEGER" property="returnDate" />
+    <result column="return_date_str" jdbcType="VARCHAR" property="returnDateStr" />
+    <result column="sku" jdbcType="VARCHAR" property="sku" />
+    <result column="asin" jdbcType="VARCHAR" property="asin" />
+    <result column="fnsku" jdbcType="VARCHAR" property="fnsku" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="cc" jdbcType="VARCHAR" property="cc" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="to_dollar" jdbcType="INTEGER" property="toDollar" />
+    <result column="fulfillment_center_id" jdbcType="VARCHAR" property="fulfillmentCenterId" />
+    <result column="detailed_disposition" jdbcType="VARCHAR" property="detailedDisposition" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="license_plate_number" jdbcType="VARCHAR" property="licensePlateNumber" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="server.entity.Refundment">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="customer_comments" jdbcType="LONGVARCHAR" property="customerComments" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    seller_id, order_id, refund_id, uid, pull_data_time, update_data_time, marketplace_id, 
+    store_code, return_date, return_date_str, sku, asin, fnsku, product_name, quantity, 
+    cc, amount, to_dollar, fulfillment_center_id, detailed_disposition, reason, status, 
+    license_plate_number
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    customer_comments
+  </sql>
+</mapper>

@@ -1,0 +1,81 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: server
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://machine:3306/db_cust_email?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置多个英文逗号分隔
+      filters: stat,wall
+      # WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      # 是否启用StatFilter默认值true
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+        session-stat-enable: false
+        session-stat-max-count: 1000
+        principal-cookie-name: admin
+        principal-session-name: admin
+        profile-enable: true
+      # 根据配置中的url-pattern来访问内置监控页面，如果是上面的配置，内置监控页面的首页是/druid/index.html
+      # http://loacalhsot:8081/druid
+      stat-view-servlet:
+        url-pattern: /druid/*  # 监控页面访问路径
+        # 允许清空统计数据
+        reset-enable: true
+        login-username: admin
+        login-password: 123456
+
+
+logging:
+  level:
+    root: warn
+    server: debug
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+mapper:
+  #  insertSelective 和 updateByPrimaryKeySelective 中，是否判断字符串类型 !=''
+  not-empty: true
+  style: camelhumpAndLowercase
+  #  控制是否支持（getter 和 setter）在方法上使用注解
+  enable-method-annotation: true
+  #  <selectKey>中的order属性，可选值为BEFORE和AFTER
+  before: false
+  #  判断实体类属性是否为表字段时校验字段是否为简单类型(不包括8种基本类型)，如果不是就忽略该属性(默认的简单类型在 SimpleTypeUtil)
+  use-simple-type: true
+  enum-as-simple-type: true
+  #  只允许待条件的删除操作
+  safe-delete: true
+  #  只允许待条件的更新操作
+  safe-update: true
+  check-example-entity-class: true
+mybatis:
+  config-location: classpath:mybatis/configuration.xml
+  mapper-locations:

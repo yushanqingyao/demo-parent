@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="server.mapper.OrderItemMapper">
+  <resultMap id="BaseResultMap" type="server.entity.OrderItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <id column="amazon_order_id" jdbcType="VARCHAR" property="amazonOrderId" />
+    <id column="order_item_id" jdbcType="VARCHAR" property="orderItemId" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="pull_data_time" jdbcType="INTEGER" property="pullDataTime" />
+    <result column="update_data_time" jdbcType="INTEGER" property="updateDataTime" />
+    <result column="asin" jdbcType="VARCHAR" property="asin" />
+    <result column="seller_sku" jdbcType="VARCHAR" property="sellerSku" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="quantity_ordered" jdbcType="INTEGER" property="quantityOrdered" />
+    <result column="quantity_shipped" jdbcType="INTEGER" property="quantityShipped" />
+    <result column="item_cc" jdbcType="VARCHAR" property="itemCc" />
+    <result column="item_amount" jdbcType="INTEGER" property="itemAmount" />
+    <result column="item_to_dollar" jdbcType="INTEGER" property="itemToDollar" />
+    <result column="shipping_cc" jdbcType="VARCHAR" property="shippingCc" />
+    <result column="shipping_amount" jdbcType="INTEGER" property="shippingAmount" />
+    <result column="shipping_to_dollar" jdbcType="INTEGER" property="shippingToDollar" />
+    <result column="gift_wrap_cc" jdbcType="VARCHAR" property="giftWrapCc" />
+    <result column="gift_wrap_amount" jdbcType="INTEGER" property="giftWrapAmount" />
+    <result column="gift_wrap_to_dollar" jdbcType="INTEGER" property="giftWrapToDollar" />
+    <result column="item_tax_cc" jdbcType="VARCHAR" property="itemTaxCc" />
+    <result column="item_tax_amount" jdbcType="INTEGER" property="itemTaxAmount" />
+    <result column="item_tax_to_dollar" jdbcType="INTEGER" property="itemTaxToDollar" />
+    <result column="shipping_tax_cc" jdbcType="VARCHAR" property="shippingTaxCc" />
+    <result column="shipping_tax_amount" jdbcType="INTEGER" property="shippingTaxAmount" />
+    <result column="shipping_tax_to_dollar" jdbcType="INTEGER" property="shippingTaxToDollar" />
+    <result column="gift_warp_tax_cc" jdbcType="VARCHAR" property="giftWarpTaxCc" />
+    <result column="gift_warp_tax_amount" jdbcType="INTEGER" property="giftWarpTaxAmount" />
+    <result column="gift_warp_tax_to_dollar" jdbcType="INTEGER" property="giftWarpTaxToDollar" />
+    <result column="shipping_discount_cc" jdbcType="VARCHAR" property="shippingDiscountCc" />
+    <result column="shipping_discount_amount" jdbcType="INTEGER" property="shippingDiscountAmount" />
+    <result column="shipping_discount_to_dollar" jdbcType="INTEGER" property="shippingDiscountToDollar" />
+    <result column="promotion_discount_cc" jdbcType="VARCHAR" property="promotionDiscountCc" />
+    <result column="promotion_discount_amount" jdbcType="INTEGER" property="promotionDiscountAmount" />
+    <result column="promotion_discount_to_dollar" jdbcType="INTEGER" property="promotionDiscountToDollar" />
+    <result column="promotion_ids" jdbcType="VARCHAR" property="promotionIds" />
+    <result column="cod_fee_cc" jdbcType="VARCHAR" property="codFeeCc" />
+    <result column="cod_fee_amount" jdbcType="INTEGER" property="codFeeAmount" />
+    <result column="cod_fee_to_dollar" jdbcType="INTEGER" property="codFeeToDollar" />
+    <result column="cod_fee_discount_cc" jdbcType="VARCHAR" property="codFeeDiscountCc" />
+    <result column="cod_fee_discount_amount" jdbcType="INTEGER" property="codFeeDiscountAmount" />
+    <result column="cod_fee_discount_to_dollar" jdbcType="INTEGER" property="codFeeDiscountToDollar" />
+    <result column="gift_wrap_level" jdbcType="VARCHAR" property="giftWrapLevel" />
+    <result column="condition_id" jdbcType="VARCHAR" property="conditionId" />
+    <result column="condition_subtype_id" jdbcType="VARCHAR" property="conditionSubtypeId" />
+    <result column="scheduled_delivery_start_date" jdbcType="VARCHAR" property="scheduledDeliveryStartDate" />
+    <result column="scheduled_delivery_end_date" jdbcType="VARCHAR" property="scheduledDeliveryEndDate" />
+    <result column="shipment_date" jdbcType="INTEGER" property="shipmentDate" />
+    <result column="shipment_date_str" jdbcType="VARCHAR" property="shipmentDateStr" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="server.entity.OrderItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="gift_message_text" jdbcType="LONGVARCHAR" property="giftMessageText" />
+    <result column="condition_note" jdbcType="LONGVARCHAR" property="conditionNote" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    seller_id, amazon_order_id, order_item_id, uid, pull_data_time, update_data_time, 
+    asin, seller_sku, title, quantity_ordered, quantity_shipped, item_cc, item_amount, 
+    item_to_dollar, shipping_cc, shipping_amount, shipping_to_dollar, gift_wrap_cc, gift_wrap_amount, 
+    gift_wrap_to_dollar, item_tax_cc, item_tax_amount, item_tax_to_dollar, shipping_tax_cc, 
+    shipping_tax_amount, shipping_tax_to_dollar, gift_warp_tax_cc, gift_warp_tax_amount, 
+    gift_warp_tax_to_dollar, shipping_discount_cc, shipping_discount_amount, shipping_discount_to_dollar, 
+    promotion_discount_cc, promotion_discount_amount, promotion_discount_to_dollar, promotion_ids, 
+    cod_fee_cc, cod_fee_amount, cod_fee_to_dollar, cod_fee_discount_cc, cod_fee_discount_amount, 
+    cod_fee_discount_to_dollar, gift_wrap_level, condition_id, condition_subtype_id, 
+    scheduled_delivery_start_date, scheduled_delivery_end_date, shipment_date, shipment_date_str
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    gift_message_text, condition_note
+  </sql>
+</mapper>

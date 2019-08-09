@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="server.mapper.FeedbackMapper">
+  <resultMap id="BaseResultMap" type="server.entity.Feedback">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="purchase_date" jdbcType="INTEGER" property="purchaseDate" />
+    <result column="pull_data_time" jdbcType="INTEGER" property="pullDataTime" />
+    <result column="purchase_date_str" jdbcType="VARCHAR" property="purchaseDateStr" />
+    <result column="update_data_time" jdbcType="INTEGER" property="updateDataTime" />
+    <result column="marketplace_id" jdbcType="VARCHAR" property="marketplaceId" />
+    <result column="store_code" jdbcType="VARCHAR" property="storeCode" />
+    <result column="feedback_date" jdbcType="VARCHAR" property="feedbackDate" />
+    <result column="rating" jdbcType="REAL" property="rating" />
+    <result column="buyer_email" jdbcType="VARCHAR" property="buyerEmail" />
+    <result column="buyer_name" jdbcType="VARCHAR" property="buyerName" />
+    <result column="rater_email" jdbcType="VARCHAR" property="raterEmail" />
+    <result column="data_source" jdbcType="VARCHAR" property="dataSource" />
+    <result column="spider_mtime" jdbcType="INTEGER" property="spiderMtime" />
+    <result column="spider_feedback_id" jdbcType="VARCHAR" property="spiderFeedbackId" />
+    <result column="label" jdbcType="VARCHAR" property="label" />
+    <result column="sentiment" jdbcType="VARCHAR" property="sentiment" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="server.entity.Feedback">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="comment" jdbcType="LONGVARCHAR" property="comment" />
+    <result column="your_response" jdbcType="LONGVARCHAR" property="yourResponse" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, uid, seller_id, order_id, purchase_date, pull_data_time, purchase_date_str, update_data_time, 
+    marketplace_id, store_code, feedback_date, rating, buyer_email, buyer_name, rater_email, 
+    data_source, spider_mtime, spider_feedback_id, label, sentiment
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    comment, your_response
+  </sql>
+</mapper>
